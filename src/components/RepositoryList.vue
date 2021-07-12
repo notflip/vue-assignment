@@ -22,7 +22,7 @@ export default {
     loadRepositories: 'repositories/load',
   }),
   computed: mapState({
-    repositories: (state) => state.repositories.repositories,
+    repositories: (state) => state.repositories.data,
   }),
 };
 </script>

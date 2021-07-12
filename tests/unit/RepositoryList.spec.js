@@ -31,7 +31,7 @@ describe('RepositoryList', () => {
     const repositoryModule = {
       namespaced: true,
       state: {
-        repositories: [
+        data: [
           { id: 1, name: 'repo 1' },
           { id: 2, name: 'repo 2' },
         ],
