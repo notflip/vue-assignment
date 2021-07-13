@@ -1,11 +1,14 @@
-export default {
-  loadRepositories () {
-    const repositories = {
-      repo1: { id: 1, name: 'repo 1' },
-      repo2: { id: 2, name: 'repo 2' }
-    }
+import axios from 'axios'
 
-    return Promise.resolve(repositories)
+export default {
+  async loadRepositories (query = '') {
+    const { data } = await axios.get('https://api.github.com/search/repositories?q=' + query + '+user:notflip')
+
+    // Map the github api data to more readable names and only the data we need
+    return data.items.map(item => ({
+      id: item.id,
+      name: item.full_name
+    }))
   },
 
   loadCommits (repositoryId) {

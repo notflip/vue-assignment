@@ -1,9 +1,9 @@
 <template>
   <div>
     <ul>
-      <li v-for="(repo, key) in repositories" :key="key" data-testid="repository">
+      <li v-for="repo in repositories" :key="repo.id" data-testid="repository">
         <router-link
-          :to="{ name: 'commits', params: { repositoryId: key } }"
+          :to="{ name: 'commits', params: { repositoryId: repo.id } }"
           >{{ repo.name }}</router-link
         >
       </li>
