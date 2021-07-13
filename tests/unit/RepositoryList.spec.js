@@ -47,7 +47,11 @@ describe('RepositoryList', () => {
       }
     })
 
-    const wrapper = shallowMount(RepositoryList, { localVue, store })
+    const wrapper = shallowMount(RepositoryList, {
+      localVue,
+      store,
+      stubs: ['router-link']
+    })
 
     expect(wrapper.findAll('[data-testid="repository"]').at(0).text()).toBe('repo 1')
     expect(wrapper.findAll('[data-testid="repository"]').at(1).text()).toBe('repo 2')

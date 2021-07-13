@@ -7,4 +7,19 @@ export default {
 
     return Promise.resolve(repositories)
   }
+
+  /* loadCommits (repositoryId) {
+    const commits = {
+      repo1: {
+        commit1: { id: 1, name: 'commit 1' },
+        commit2: { id: 2, name: 'commit 2' }
+      },
+      repo2: {
+        commit1: { id: 3, name: 'commit 1' },
+        commit2: { id: 4, name: 'commit 2' }
+      }
+    }
+
+    return Promise.resolve(commits[repositoryId])
+  } */
 }
