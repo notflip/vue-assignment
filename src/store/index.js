@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import api from '@/api/api'
 import repositories from '@/store/repositories'
+import commits from '@/store/commits'
 
 Vue.use(Vuex)
 
@@ -10,5 +11,8 @@ export default new Vuex.Store({
   state: {},
   mutations: {},
   actions: {},
-  modules: { repositories: repositories(api) }
+  modules: {
+    repositories: repositories(api),
+    commits: commits(api)
+  }
 })

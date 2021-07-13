@@ -28,10 +28,10 @@ describe('commits load action', () => {
       }
     })
 
-    await store.dispatch('commits/load', { repositoryId: 'repo1' })
+    await store.dispatch('commits/load', 'repo1')
     expect(store.state.commits.data).toEqual(fakeData.repo1)
 
-    await store.dispatch('commits/load', { repositoryId: 'repo2' })
+    await store.dispatch('commits/load', 'repo2')
     expect(store.state.commits.data).toEqual(fakeData.repo2)
   })
 })

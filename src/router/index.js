@@ -14,7 +14,8 @@ const routes = [
   {
     path: '/repositories/:repositoryId',
     name: 'commits',
-    component: RepositoryCommits
+    component: RepositoryCommits,
+    props: true
   }
 ]
 

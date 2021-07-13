@@ -4,7 +4,7 @@ export default (api) => ({
     data: []
   },
   actions: {
-    load: ({ commit }, { repositoryId }) => {
+    load: ({ commit }, repositoryId) => {
       api.loadCommits(repositoryId).then((data) => {
         commit('storeCommits', data)
       })
