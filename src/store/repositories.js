@@ -1,18 +1,18 @@
 export default (api) => ({
   namespaced: true,
   state: {
-    data: [],
+    data: []
   },
   actions: {
     load: ({ commit }) => {
       api.loadRepositories().then((data) => {
-        commit('storeRepositories', data);
-      });
-    },
+        commit('storeRepositories', data)
+      })
+    }
   },
   mutations: {
-    storeRepositories(state, data) {
-      state.data = data;
-    },
-  },
-});
+    storeRepositories (state, data) {
+      state.data = data
+    }
+  }
+})

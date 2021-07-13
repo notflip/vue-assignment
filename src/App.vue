@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import RepositoryList from '@/components/RepositoryList.vue';
+import RepositoryList from '@/components/RepositoryList.vue'
 
 export default {
   components: {
-    RepositoryList,
-  },
-};
+    RepositoryList
+  }
+}
 </script>

@@ -11,18 +11,18 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'RepositoryList',
-  mounted() {
-    this.loadRepositories();
+  mounted () {
+    this.loadRepositories()
   },
   methods: mapActions({
-    loadRepositories: 'repositories/load',
+    loadRepositories: 'repositories/load'
   }),
   computed: mapState({
-    repositories: (state) => state.repositories.data,
-  }),
-};
+    repositories: (state) => state.repositories.data
+  })
+}
 </script>
