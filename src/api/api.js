@@ -2,27 +2,23 @@ import axios from 'axios'
 
 export default {
   async loadRepositories (query = '') {
-    const { data } = await axios.get('https://api.github.com/search/repositories?q=' + query + '+user:notflip')
+    const { data } = await axios.get('https://api.github.com/users/notflip/repos?per_page=20')
 
     // Map the github api data to more readable names and only the data we need
-    return data.items.map(item => ({
+    return data.map(item => ({
       id: item.id,
-      name: item.full_name
+      name: item.name,
+      full_name: item.full_name
     }))
   },
 
-  loadCommits (repositoryId) {
-    const commits = {
-      repo1: {
-        commit1: { id: 1, name: 'commit 1' },
-        commit2: { id: 2, name: 'commit 2' }
-      },
-      repo2: {
-        commit3: { id: 3, name: 'commit 3' },
-        commit4: { id: 4, name: 'commit 4' }
-      }
-    }
+  async loadCommits (repositoryId) {
+    const { data } = await axios.get('https://api.github.com/repos/notflip/' + repositoryId + '/commits')
 
-    return Promise.resolve(commits[repositoryId])
+    // Map the github api data to more readable names and only the data we need
+    return data.map(item => ({
+      author: item.commit.author.name,
+      message: item.commit.message
+    }))
   }
 }
