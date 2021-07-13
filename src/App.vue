@@ -1,15 +1,8 @@
 <template>
   <div id="app">
-    <repository-list></repository-list>
+    <div id="nav">
+      <router-link to="/">Repositories</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
-
-<script>
-import RepositoryList from '@/components/RepositoryList.vue'
-
-export default {
-  components: {
-    RepositoryList
-  }
-}
-</script>
