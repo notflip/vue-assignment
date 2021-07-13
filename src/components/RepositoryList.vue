@@ -3,8 +3,8 @@
     <ul>
       <li v-for="repo in repositories" :key="repo.id" data-testid="repository">
         <router-link
-          :to="{ name: 'commits', params: { repositoryId: repo.id } }"
-          >{{ repo.name }}</router-link
+          :to="{ name: 'commits', params: { repositoryId: repo.name} }"
+          >{{ repo.full_name }}</router-link
         >
       </li>
     </ul>

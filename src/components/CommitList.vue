@@ -1,8 +1,9 @@
 <template>
   <div>
     <ul>
-        {{ commits }}
-      <li v-for="(commit, key) in commits" :key="key" data-testid="commit">{{ commit.name }}</li>
+      <li v-for="(commit, key) in commits" :key="key" data-testid="commit">
+        {{ commit.message }} {{ commit.author }}
+      </li>
     </ul>
   </div>
 </template>

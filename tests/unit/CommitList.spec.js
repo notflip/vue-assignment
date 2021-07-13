@@ -36,8 +36,8 @@ describe('CommitList', () => {
       namespaced: true,
       state: {
         data: {
-          commit1: { id: 1, name: 'commit 1' },
-          commit2: { id: 2, name: 'commit 2' }
+          commit1: { id: 1 },
+          commit2: { id: 2 }
         }
       },
       actions: {
@@ -57,7 +57,6 @@ describe('CommitList', () => {
       store
     })
 
-    expect(wrapper.findAll('[data-testid="commit"]').at(0).text()).toBe('commit 1')
-    expect(wrapper.findAll('[data-testid="commit"]').at(1).text()).toBe('commit 2')
+    expect(wrapper.findAll('[data-testid="commit"]').length).toBe(2)
   })
 })

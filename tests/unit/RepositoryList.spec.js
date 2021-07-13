@@ -32,8 +32,9 @@ describe('RepositoryList', () => {
       namespaced: true,
       state: {
         data: [
-          { id: 1, name: 'repo 1' },
-          { id: 2, name: 'repo 2' }
+          { id: 1 },
+          { id: 2 },
+          { id: 3 }
         ]
       },
       actions: {
@@ -53,7 +54,6 @@ describe('RepositoryList', () => {
       stubs: ['router-link']
     })
 
-    expect(wrapper.findAll('[data-testid="repository"]').at(0).text()).toBe('repo 1')
-    expect(wrapper.findAll('[data-testid="repository"]').at(1).text()).toBe('repo 2')
+    expect(wrapper.findAll('[data-testid="repository"]').length).toBe(3)
   })
 })
