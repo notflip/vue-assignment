@@ -1,6 +1,6 @@
-# vue-assignment
+# Vue Assignment Appeel
 
-## Project setup
+## Setup
 ```
 npm install
 ```
@@ -10,20 +10,10 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
+### Unit Tests
 ```
 npm run test:unit
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Filtering
+Filtering happens after all commits have been fetched, using the search functionality of github requires the author of the commits to be authenticated.

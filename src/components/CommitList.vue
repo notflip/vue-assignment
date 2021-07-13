@@ -1,7 +1,8 @@
 <template>
   <div>
+    Searching: {{ search }}
     <ul>
-      <li v-for="(commit, key) in commits" :key="key" data-testid="commit">
+      <li v-for="(commit, key) in commitSearchResults" :key="key" data-testid="commit">
         {{ commit.message }} {{ commit.author }}
       </li>
     </ul>
@@ -21,7 +22,14 @@ export default {
     loadCommits: 'commits/load'
   }),
   computed: mapState({
-    commits: (state) => state.commits.data
+    search: (state) => state.search,
+    commits: (state) => state.commits.data,
+    commitSearchResults () {
+      if (!this.search) {
+        return this.commits
+      }
+      return this.commits.filter(commit => commit.message.toLowerCase().includes(this.search.toLowerCase()))
+    }
   })
 }
 </script>

@@ -8,8 +8,14 @@ import commits from '@/store/commits'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    search: ''
+  },
+  mutations: {
+    updateSearch (state, value) {
+      state.search = value
+    }
+  },
   actions: {},
   modules: {
     repositories: repositories(api),
