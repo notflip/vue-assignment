@@ -1,6 +1,5 @@
 <template>
   <div>
-    Searching: {{ search }}
     <ul>
       <li v-for="(commit, key) in commitSearchResults" :key="key" data-testid="commit">
         {{ commit.message }} {{ commit.author }}
